@@ -281,3 +281,116 @@ if(can_total>=30 && can_total<=45){
     }
 }*/
 //ejercicio8
+/*let x=parseInt(prompt("ingrese un numero en x: "))
+let n=parseInt(prompt("ingrese un numero en n: "))
+let suma = 0
+for (let i = 2 ; i <= n ; i+=2){
+         suma += (x**i)/i
+    }
+document.write(suma)*/
+//ejercicio9 Hacer un programa que clasifique 400 personas según el deporte que practica. Los deportes son: Ajedrez, Atletismo, Fútbol, Gimnasia, Natación.
+/*let ajedrez=0,atletismo=0,futbol=0,gimnasia=0,natacion=0
+let personas
+for ( let i =1 ; i<=400; i++){
+    do{
+        personas=parseInt(prompt("INGRESE EL DEPORTE DE LA PERSONA "+ i+":\n"+
+        "1. ajedrez\n"+
+        "2. atletismo\n"+
+        "3. futbol\n"+
+        "4. gimnasia\n"+
+        "5. natacion\n"+
+        "SELECIONE UNA OPCION(1,2,3,4,5):"
+        ))
+         if(personas<1 || personas>5){
+            alert("opcion invalida, ingrese solo numeros del 1-5")
+        } 
+    }while(personas<1||personas>5)
+    if (personas==1){
+            ajedrez++
+        }
+    else if (personas==2){
+        atletismo++
+    }
+    else if (personas==3){
+        futbol++
+    }
+    else if (personas==4){
+        gimnasia++
+    }
+    else if (personas==5){
+        natacion++
+    }
+}
+document.write("el deporte de las 400 personas son:<br>"+
+    "Ajedrez: "+ajedrez+"<br>"+
+    "Acletismo: "+atletismo+"<br>"+
+    "Futbol: "+futbol+"<br>"+
+    "Gimnasia: "+gimnasia+"<br>"+
+    "natacion: "+natacion
+)*/
+//ejercicio 10 Escribir un script que pida al usuario una contraseña. Si coincide con la clave definida en el script le devolverá el mensaje "Acceso concedido" y si no coincide le devolverá el mensaje "Acceso Denegado" . Si falla tres veces se emitirá el mensaje "Alerta, intruso“.	
+/*let contraseña_correcta=1234
+let contraseña
+let intentos=0
+while(intentos<3){
+    contraseña=parseInt(prompt("ingrese contraseña"))
+    if (contraseña==contraseña_correcta){
+        document.write("acceso consedido")
+    }
+    else if(contraseña!=contraseña_correcta){
+        intentos++
+        if(intentos<3){
+        alert("acceso denegado,intentelo de nuevo")
+        }
+    } 
+}
+if (intentos==3){
+    alert("alerta, INTRUSO")    
+}*/
+//ejercicio 11 Este script le pide al usuario que vaya tecleando números una y otra vez, pero solo números pares, en caso de que teclee un número impar el programa acabará y dirá la cantidad de números pares ingresados (el 0 cuenta como par).
+
+/*let cantidad=0
+let pares=parseInt(prompt("ingrese un numero:"))
+while(pares%2 == 0){
+    cantidad++
+    pares=parseInt(prompt("ingrese otro numero:"))
+}
+document.write("cantidad de pares: "+cantidad)*/
+//ejercicio 12 Crear un array para guardar los nombres de los días de la semana, empezando por el índice 0, para lunes. El usuario debe digitar un número entre 1 y 7 y el script, devolver el nombre del día. Se debe validar la información ingresada por el usuario.
+
+/*let dias = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
+let num = parseInt(prompt("Ingrese un número del 1-7:"))
+if (num >= 1 && num <= 7) {
+    document.write("El día es: " + dias[num - 1])
+} else {
+    document.write("Error: debe ingresar un número entre 1-7.")
+}*/
+//ejercio 13 Dado un arreglo de números, cree un programa que sume todos los números que forman el array.
+
+/*let num=[10,5,8,3,4]
+let suma=0
+for (let i = 0; i < num.length; i++) {
+    suma += num[i];
+}
+document.write("La suma es: "+ suma)*/
+//ejercicio 14 Diseñe un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
+
+let numeros = []
+let pares = 0
+let impares = 0
+while (true) {
+    let num = parseInt(prompt("Ingrese un número (0 para terminar):"))
+    if (num == 0) {
+        break
+    }
+    numeros.push(num)//para agg al final de la lista
+    if (num % 2 == 0) {
+        pares++
+    } else {
+        impares++
+    }
+}
+document.write("Números ingresados:<br>"+
+    numeros.join(", ")/*.join para separar los numeros de la lista pro un (,)*/+
+    "<br><br> Cantidad de números pares: "+pares+
+    "<br>Cantidad de números impares: " + impares)
