@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.contenedor {
+    max-width: 500px;
+    width: 100%;
+    padding: 25px 30px;
+    background-color: mediumaquamarine;
+    border-radius: 10px;
+}
+
+.titulo{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(189, 245, 189);
+}
+
+#frec {
+    width: 20px;
+    height: 20px;
+}
+
+fieldset {
+    width: 80%;
+    border: 4px solid orangered;
+    border-radius: 10px;
+    background: rgb(75, 155, 138);
+}
+
+legend {
+    color: darkblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+label, select, button {
+    font-size: 20px;
+}
+#errores{
+position: absolute; /*se le pone la posiscion adsoluta para q me permita acomodarla donde quiero en la pagina*/
+top: 100px;/*para darle al section ubicarlo 20px en la parte de arriba*/
+left: 550px;/*me ubica el sector lejos de la parte izquierda debido a la cantidad de 550px*/
+width: 400px;/*este es para lo ancho q va a cupar mi sector*/
+min-width: 200px;
+
+}
+#resultados{
+position: absolute;
+top: 100px;
+left: 550px;
+width: 400px;
+min-width: 200px;
+}
