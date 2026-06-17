@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#8b663c;
+    padding:20px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+main{
+    max-width:1000px;
+    margin:auto;
+}
+
+section{
+    background:rgb(255, 63, 63);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+form{
+    display:grid;
+    gap:10px;
+}
+
+input,
+select,
+button{
+    padding:10px;
+}
+
+button{
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,
+table td{
+    border:1px solid #000000;
+    padding:10px;
+    text-align:center;
+}
+
+table th{
+    background:#ff8800;
+    color:rgb(0, 0, 0);
+}
+
+.resumen{
+    text-align:center;
+}
+
+#totalInventario{
+    color:green;
+    margin-top:10px;
+}
+input{
+    background: rgb(214, 188, 188);
+    border-radius: 10px;
+}
+select{
+    background: rgb(214, 188, 188);
+    border-radius: 10px;
+}
+button{
+    background-color: rgb(77, 19, 19);
+    color: white;
+    border-radius: 10px;
+}
+footer{
+    text-align: center;
+    font-size: 10px;
+}
+#importarArchivo{
+     background-color: rgb(77, 19, 19);
+    color: white;
+    border-radius: 10px;
+}
