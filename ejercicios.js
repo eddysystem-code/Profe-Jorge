@@ -1,28 +1,27 @@
-//EJERCICIO1
-// let unidad,cantidad,mi,km,mt
-// unidad=parseInt(prompt("digite 1 para millas - 2 para kilometros - 3 para metros"))
-// cantidad=(prompt("Digite el valor a convertir: "))
-// switch(unidad){
-//     case 1: 
-//         km=cantidad*1.6093
-//         mt=cantidad*1609.34
-//         document.write(cantidad +"millas, equivalen a " + km +"kilometros; "+ mt + "metros")
-//         break
-//     case 2:
-//         mi=  cantidad*0.621371
-//         mt= cantidad*1000
-//         document.write(cantidad + "kilometros, equivalen a"+ mi + "millas;" + mt + "metros")
-//         break
-//     case 3:
-//         mi=cantidad*0.000621371
-//         km=cantidad/ 1000
-//         document.write(cantidad + " metros, equivalen a" + mi + "millas;" * km + "kilometros")
-//         break
-//     default:
-//         document.write("valores INCORRECTOS.")
-
-// }
-// // //EJERCICIO2
+ //EJERCICIO1
+  /*let unidad,cantidad,mi,km,mt
+  unidad=parseInt(prompt("digite 1 para millas - 2 para kilometros - 3 para metros"))
+  cantidad=(prompt("Digite el valor a convertir: "))
+  switch(unidad){
+      case 1: 
+          km=cantidad*1.6093
+          mt=cantidad*1609.34
+          document.write(cantidad +"millas, equivalen a " + km +"kilometros; "+ mt + "metros")
+          break
+      case 2:
+          mi=  cantidad*0.621371
+          mt= cantidad*1000
+          document.write(cantidad + "kilometros, equivalen a"+ mi + "millas;" + mt + "metros")
+          break
+      case 3:
+          mi=cantidad*0.000621371
+          km=cantidad/ 1000
+          document.write(cantidad + " metros, equivalen a" + mi + "millas;" * km + "kilometros")
+          break
+      default:
+          document.write("valores INCORRECTOS.")
+  }*/
+//EJERCICIO2
 /*let d1,d2,d3,d4,d5,d6,num,coc
 num=parseInt(prompt("ingrese un numero de 6 cifras: "))
 d6=num%10
@@ -62,7 +61,7 @@ minutos = String(minutos).padStart(2, "0")
 segundos = String(segundos).padStart(2, "0")
 document.write(hora + ":" + minutos + ":" + segundos)//el document.write es cpmp el print de python donde colocamos las variables mas el ":"para q visuaalmente se vea separadas las variable*/
 //ejercicio 4
-/*let a = parseInt(prompt("ingrese un numero + o - : "))
+let a = parseInt(prompt("ingrese un numero + o - : "))
 let b = parseInt(prompt("ingrese un numero + o - : "))
 let c = parseInt(prompt("ingrese un numero + o - : "))
 let discriminante = ((b) ** 2 - (4 * a * c))
@@ -79,7 +78,7 @@ if (discriminante === 0) {
     let real = (-b /(2 * a))
     let imaginaria = (Math.sqrt(- discriminante)/ (2 * a))
     document.write("solucion 1: " + real + "+" + imaginaria + "i" + " y la solucion 2: " + real + "-" + imaginaria + "i")//en este caso la "i" significa q es un numero imaginario 
-}*/
+}
 //ejercicio5
 // let pos=0,neg=0,cero=0,tem
 // while(true){
