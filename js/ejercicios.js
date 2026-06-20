@@ -61,7 +61,7 @@ minutos = String(minutos).padStart(2, "0")
 segundos = String(segundos).padStart(2, "0")
 document.write(hora + ":" + minutos + ":" + segundos)//el document.write es cpmp el print de python donde colocamos las variables mas el ":"para q visuaalmente se vea separadas las variable*/
 //ejercicio 4
-let a = parseInt(prompt("ingrese un numero + o - : "))
+/*let a = parseInt(prompt("ingrese un numero + o - : "))
 let b = parseInt(prompt("ingrese un numero + o - : "))
 let c = parseInt(prompt("ingrese un numero + o - : "))
 let discriminante = ((b) ** 2 - (4 * a * c))
@@ -78,25 +78,25 @@ if (discriminante === 0) {
     let real = (-b /(2 * a))
     let imaginaria = (Math.sqrt(- discriminante)/ (2 * a))
     document.write("solucion 1: " + real + "+" + imaginaria + "i" + " y la solucion 2: " + real + "-" + imaginaria + "i")//en este caso la "i" significa q es un numero imaginario 
-}
+}*/
 //ejercicio5
-// let pos=0,neg=0,cero=0,tem
-// while(true){
-//     tem=(prompt("ingrese una temperatura:"))
-//     if (tem ==99 && tem ==99){
-//         break
-//     }else if(tem>0){
-//         pos++
-//     }else if(tem<0){
-//         neg++
-//     }else{
-//         cero++
-//     }
-//     tem=(prompt("ingrese una temperatura:"))
-// }
-// document.write("temperaturas mayores a 0: "+ pos+"<br>")
-// document.write("temperaturas iguales a 0: "+ cero+"<br>")
-// document.write("temperaturas menores a 0: "+ neg)
+/* let pos=0,neg=0,cero=0,tem
+ while(true){
+     tem=(prompt("ingrese una temperatura:"))
+     if (tem ==99 && tem ==99){
+         break
+     }else if(tem>0){
+         pos++
+     }else if(tem<0){
+         neg++
+     }else{
+         cero++
+     }
+     tem=(prompt("ingrese una temperatura:"))
+ }
+ document.write("temperaturas mayores a 0: "+ pos+"<br>")
+ document.write("temperaturas iguales a 0: "+ cero+"<br>")
+ document.write("temperaturas menores a 0: "+ neg)*/
 //ejercicio6
 /*let radar,d1,d2,d3,d4,res
 radar=parseInt(prompt("ingrese 4 numeros: "))
@@ -129,7 +129,7 @@ document.write(" en una distancia de:  "+ d3 + " km ")
 if(d4==0 || d4==1){
     document.write("al norte")
 }else if(d4==2 ||d4==3){
-    document.write("al sur"
+    document.write("al sur")
 }else if(d4==4||d4==5){
     document.write("al oriente")
 }else if(d4==6 ||d4==7){
@@ -140,6 +140,7 @@ if(d4==0 || d4==1){
     document.write("su valor no conside.")    
 }*/
 //ejercicio 7
+
 /*let can1, can2, can3, can_total,precio_total
 let frec,dia
 let A=600,AA=700,AAA=750
