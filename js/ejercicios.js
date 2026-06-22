@@ -41,7 +41,7 @@ document.write("\nla multiplicacion es " + (d1*d6))
 document.write("\nla resta es:" + (d2-d5))*/
 
 //ejercicio 3 
-/*let hora= parseInt(prompt("ingrese una hora (0/23):"))// primero creamos una variable con el let despues usamos el parseInt para lo q le digamos a la consola lo convierta a texto el prompt es como el input de python
+let hora= parseInt(prompt("ingrese una hora (0/23):"))// primero creamos una variable con el let despues usamos el parseInt para lo q le digamos a la consola lo convierta a texto el prompt es como el input de python
 let minutos= parseInt(prompt("ingrese un minuto (0/59):"))
 let segundos= parseInt(prompt("ingrese un segundo (0/59):"))
 segundos++//a la variable segundos se le coloca el ++ para poder aumentar numero tras otro
@@ -59,7 +59,7 @@ if(hora === 24) {
 hora = String(hora).padStart(2, "0")//la variable horra la pasamos a texto con el string para poder usar el padstart el 2 lo q hace es dar a entender q siempre tenemos q tener 2 caracteres y el "0"es para q se complete el espacio en caso de q el resultado solo sea 1 caracter
 minutos = String(minutos).padStart(2, "0")
 segundos = String(segundos).padStart(2, "0")
-document.write(hora + ":" + minutos + ":" + segundos)//el document.write es cpmp el print de python donde colocamos las variables mas el ":"para q visuaalmente se vea separadas las variable*/
+document.write(hora + ":" + minutos + ":" + segundos)//el document.write es cpmp el print de python donde colocamos las variables mas el ":"para q visuaalmente se vea separadas las variable
 //ejercicio 4
 /*let a = parseInt(prompt("ingrese un numero + o - : "))
 let b = parseInt(prompt("ingrese un numero + o - : "))
@@ -375,7 +375,7 @@ for (let i = 0; i < num.length; i++) {
 document.write("La suma es: "+ suma)*/
 //ejercicio 14 Diseñe un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
 
-let numeros = []
+/*let numeros = []
 let pares = 0
 let impares = 0
 while (true) {
@@ -391,6 +391,6 @@ while (true) {
     }
 }
 document.write("Números ingresados:<br>"+
-    numeros.join(", ")/*.join para separar los numeros de la lista pro un (,)*/+
+    numeros.join(", ")/*.join para separar los numeros de la lista pro un (,)+
     "<br><br> Cantidad de números pares: "+pares+
-    "<br>Cantidad de números impares: " + impares)
+    "<br>Cantidad de números impares: " + impares)*/
