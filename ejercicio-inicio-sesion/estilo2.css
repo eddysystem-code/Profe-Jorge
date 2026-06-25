@@ -1,17 +1,17 @@
 body {
-    background-color: #eeeeee;
+    background-color: #bd0909;
     font-family: sans-serif;
     padding-top: 100px; /* Desplaza el contenedor hacia abajo */
     background-image: url(img\ inicio.png);
 }
 
 .contenedor {
-    background-color: #382395d9;
+    background-color: #fffb02d9;
     width: 300px;
     height: 300px;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 20px;
-    border: 1px solid #0004ff;
+    border: 1px solid #ffe604;
     border-radius: 20px;
 }
 

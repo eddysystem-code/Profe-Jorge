@@ -1,145 +1,91 @@
-const btnAgregar = document.getElementById("btnAgregar");
-const tablaBody = document.querySelector("#tabla tbody");
-const totalGeneral = document.getElementById("totalGeneral");
-const imagenes = {
-    tomate:"img1.jpg",
-    papasfritas:"img2.webp",
-    cebolla:"img3.png",
-    lechuga:"img4.jpg",
-    maracuya:"img5.webp",
-    lulo:"img6.jpg",
-    yuca:"img7.avif",
-    ajo:"img8.jpg",
-    papacriolla:"img9.jpg",
-    manzanaverde:"img10.jpg",
-    naranja:"img11.avif",
-    manzanaroja:"img12.jpg",
-    sandia:"img13.webp",
-    banano:"img14.webp",
-    mora:"img15.jpg",
-    fresa:"img16.jpg",
-    arandano:"img17.jpg",
-    papaya:"img18.jpg",
-    platanoverde:"img19.png",
-    pera:"img20.jpg",
-    piña:"img21.webp"
+const productos = {
+tomate:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337",
+papasfritas:"https://images.unsplash.com/photo-1576107232684-1279f390859f",
+cebolla:"https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb",
+lechuga:"https://images.unsplash.com/photo-1622205313162-be1d5712a43e",
+maracuya:"https://images.unsplash.com/photo-1605027990121-cbae9e0642df",
+lulo:"https://upload.wikimedia.org/wikipedia/commons/5/57/Lulo.jpg",
+yuca:"https://upload.wikimedia.org/wikipedia/commons/9/9e/Cassava.jpg",
+ajo:"https://images.unsplash.com/photo-1615485290382-441e4d049cb5",
+papacriolla:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Papas.jpg",
+manzanaverde:"https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+naranja:"https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b",
+manzanaroja:"https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a",
+sandia:"https://images.unsplash.com/photo-1563114773-84221bd62daa",
+banano:"https://images.unsplash.com/photo-1603833665858-e61d17a86224",
+mora:"https://images.unsplash.com/photo-1563746098251-d35aef196e83",
+fresa:"https://images.unsplash.com/photo-1543528176-61b239494933",
+arandano:"https://images.unsplash.com/photo-1498557850523-fd3d118b962e",
+papaya:"https://images.unsplash.com/photo-1617112848923-cc2234396a8d",
+paltanoverde:"https://upload.wikimedia.org/wikipedia/commons/8/8a/Plantains.jpg",
+"piña":"https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1",
+pera:"https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a"
 };
 
-const selectProducto = document.getElementById("nombre");
-const imgProducto = document.getElementById("imgProducto");
+const nombre=document.getElementById("nombre");
+const cantidad=document.getElementById("cantidad");
+const precio=document.getElementById("precio");
+const tabla=document.querySelector("#tabla tbody");
+const totalGeneral=document.getElementById("totalGeneral");
+const imagen=document.getElementById("imgProducto");
 
-function actualizarImagen() {
-  imgProducto.src = imagenes[selectProducto.value];
+function cambiarImagen(){
+imagen.src=productos[nombre.value];
 }
 
-selectProducto.addEventListener("change", actualizarImagen);
+nombre.addEventListener("change",cambiarImagen);
 
-// Mostrar la imagen del primer producto al cargar
-actualizarImagen();
+let total=0;
 
-btnAgregar.addEventListener("click", () => {
-  const nombre = document.getElementById("nombre").value;
-  const cantidad = parseInt(document.getElementById("cantidad").value);
-  const precio = parseFloat(document.getElementById("precio").value);
+document.getElementById("btnAgregar").addEventListener("click",()=>{
 
-  if (!nombre || isNaN(cantidad) || isNaN(precio)) {
-    alert("Por favor complete todos los campos.");
-    return;
-  }
+if(
+cantidad.value===""||
+precio.value===""
+){
+alert("Completa todos los campos");
+return;
+}
 
-  agregarProducto(nombre, cantidad, precio);
-  limpiar();
+let producto=nombre.options[nombre.selectedIndex].text;
+
+let cant=Number(cantidad.value);
+let pre=Number(precio.value);
+
+let subtotal=cant*pre;
+
+total+=subtotal;
+
+const fila=document.createElement("tr");
+
+fila.innerHTML=`
+<td>${producto}</td>
+<td>${cant}</td>
+<td>$${pre}</td>
+<td>$${subtotal}</td>
+<td>
+<button class="eliminar">
+Eliminar
+</button>
+</td>
+`;
+
+fila.querySelector(".eliminar").onclick=()=>{
+total-=subtotal;
+actualizarTotal();
+fila.remove();
+};
+
+tabla.appendChild(fila);
+
+actualizarTotal();
+
+cantidad.value="";
+precio.value="";
 });
 
-function agregarProducto(nombre, cantidad, precio) {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-            <td>${nombre}</td>
-
-            <td>
-                <button class="menos">–</button>
-                <span class="cant">${cantidad}</span>
-                <button class="mas">+</button>
-            </td>
-
-            <td>
-                $<span class="precio">${precio}</span>
-                <button class="editarPrecio">✏️</button>
-            </td>
-
-            <td>$<span class="total">${(cantidad * precio).toFixed(
-              2
-            )}</span></td>
-
-            <td><button class="eliminar">🗑️</button></td>
-        `;
-
-  tablaBody.appendChild(tr);
-  recalcularTotal();
+function actualizarTotal(){
+totalGeneral.textContent=`Total general: $${total}`;
 }
 
-function limpiar() {
-  document.getElementById("nombre").value = "";
-  document.getElementById("cantidad").value = "";
-  document.getElementById("precio").value = "";
-}
-
-tablaBody.addEventListener("click", function (e) {
-  const fila = e.target.closest("tr");
-
-  if (e.target.classList.contains("mas")) {
-    let cant = fila.querySelector(".cant");
-    cant.textContent = parseInt(cant.textContent) + 1;
-  }
-
-  if (e.target.classList.contains("menos")) {
-    let cant = fila.querySelector(".cant");
-    let actual = parseInt(cant.textContent);
-    if (actual > 0) cant.textContent = actual - 1;
-  }
-
-  if (e.target.classList.contains("editarPrecio")) {
-    let precioSpan = fila.querySelector(".precio");
-    const nuevo = prompt("Nuevo precio:", precioSpan.textContent);
-    if (nuevo !== null && !isNaN(parseFloat(nuevo))) {
-      precioSpan.textContent = parseFloat(nuevo);
-    }
-  }
-
-  if (e.target.classList.contains("eliminar")) {
-    fila.remove();
-  }
-
-  actualizarFila(fila);
-  recalcularTotal();
-});
-
-function actualizarFila(fila) {
-  const cant = parseInt(fila.querySelector(".cant").textContent);
-  const precio = parseFloat(fila.querySelector(".precio").textContent);
-
-  const total = fila.querySelector(".total");
-  total.textContent = (cant * precio).toFixed(2);
-
-  if (cant === 0) {
-    fila.classList.add("low-stock");
-  } else {
-    fila.classList.remove("low-stock");
-  }
-}
-
-function recalcularTotal() {
-  let suma = 0;
-
-  const totales = document.querySelectorAll("#tabla tbody .total");
-
-  totales.forEach((t) => {
-    const valor = parseFloat(t.textContent);
-    if (!isNaN(valor)) {
-      suma += valor;
-    }
-  });
-
-  totalGeneral.textContent = "Total general: $" + suma.toFixed(2);
-}
+cambiarImagen();
